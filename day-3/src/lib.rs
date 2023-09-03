@@ -1,14 +1,13 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use std::{fs, collections::HashMap};
+pub fn read_input() -> String {
+    let file_contents = fs::read_to_string("day-3/input.txt").expect("Failed to read file");
+    file_contents
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+pub fn get_priority_hash_map() -> HashMap<char, usize> {
+    let mut priority_mapping = HashMap::new();
+    for (i,char) in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".chars().enumerate() {
+        priority_mapping.insert(char, (i + 1) as usize);
     }
+    priority_mapping
 }
