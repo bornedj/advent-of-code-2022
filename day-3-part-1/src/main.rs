@@ -13,17 +13,12 @@ fn main() {
         let compartment_2 = compartment_1.split_off(compartment_1.len() / 2);
 
         // filter the halves for matching characters
-        let mut characters_1 = compartment_1.iter();
         for char in compartment_2.iter() {
-            if let Some(c) = characters_1.find(|&x| x == char) {
-                print!("{},", c);
-                if let Some(curr_priority) = priority_mapping.get(&c.chars().next().unwrap()) {
-                    count += curr_priority;
-                    println!("{}, {}", curr_priority, count);
-                }
+            if let Some(c) = compartment_1.iter().find(|&x| x == char) {
+                count += priority_mapping.get(&c.chars().next().unwrap()).unwrap();
+                break;
             }
         }
-        // }
     }
     println!("{}", count);
 }
