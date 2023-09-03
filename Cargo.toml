@@ -4,5 +4,6 @@ members = [
     "calories",
     "rock-paper-scissors",
     "rock-paper-scissors2",
-    "rock-paper-scissors-lib"
+    "rock-paper-scissors-lib",
+    "day-3"
 ]
