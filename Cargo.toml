@@ -7,5 +7,6 @@ members = [
     "rock-paper-scissors-lib",
     "day-3",
     "day-3-part-1",
-    "day-3-part-2"
+    "day-3-part-2",
+    "day-4",
 ]
